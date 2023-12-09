@@ -144,6 +144,6 @@ function validateRecipe(recipe) {
   return schema.validate(recipe);
 }
 
-app.listen(3010, () => {
+app.listen(3000, () => {
   console.log("I'm listening");
 });
