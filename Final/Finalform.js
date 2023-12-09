@@ -1,7 +1,7 @@
 const getRecipes = async () => {
     try {
       return (
-        await fetch("https://mongo-rjif.onrender.com/api/recipes")
+        await fetch("https://finalproject-g265.onrender.com/api/recipes")
       ).json();
     } catch (error) {
       console.log(error);
@@ -27,7 +27,7 @@ const getRecipes = async () => {
   
       if (recipe.img) {
         const img = document.createElement("img");
-        img.src = "https://mongo-rjif.onrender.com/" + recipe.img;
+        img.src = "https://finalproject-g265.onrender.com/" + recipe.img;
         section.append(img);
       }
   
@@ -85,7 +85,7 @@ const getRecipes = async () => {
   
   async function deleteRecipe(_id) {
     let response = await fetch(
-      `https://mongo-rjif.onrender.com/api/recipes/${_id}`,
+      `https://finalproject-g265.onrender.com/api/recipes/${_id}`,
       {
         method: "DELETE",
         headers: {
@@ -145,7 +145,7 @@ const getRecipes = async () => {
       formData.delete("_id");
       console.log(...formData);
       response = await fetch(
-        "https://mongo-rjif.onrender.com/api/recipes",
+        "https://finalproject-g265.onrender.com/api/recipes",
         {
           method: "POST",
           body: formData,
@@ -154,7 +154,7 @@ const getRecipes = async () => {
     } else {
       console.log("editting");
       response = await fetch(
-        `https://mongo-rjif.onrender.com/api/recipes/${form._id.value}`,
+        `https://finalproject-g265.onrender.com/api/recipes/${form._id.value}`,
         {
           method: "PUT",
           body: formData,
@@ -181,7 +181,7 @@ const getRecipes = async () => {
   
   const getRecipe = async (_id) => {
     let response = await fetch(
-      `https://mongo-rjif.onrender.com/api/recipes/${_id}`
+      `https://finalproject-g265.onrender.com/api/recipes/${_id}`
     );
     if (response.status != 200) {
       console.log("Error receiving recipe");
